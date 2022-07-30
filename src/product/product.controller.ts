@@ -8,7 +8,7 @@ export class ProductController {
     constructor(private productService: ProductService) {}
     // DTO data transfer object
     @Post('/create')
-   async createPost(@Res() res, @Body() createProductDTO: CreateProductDTO) {
+   async createProduct(@Res() res, @Body() createProductDTO: CreateProductDTO) {
       const product =   await this.productService.createProduct(createProductDTO);
         return res.status(HttpStatus.OK).json({
             message: 'Product Successfully Created',
